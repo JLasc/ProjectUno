@@ -41,6 +41,11 @@ p {
   color: white;
   /* background-color: rgb(43, 43, 83); */
 }
+#logo-container img{
+  
+  margin-top: 5px;
+  width:60%;
+}
 
 @media only screen and (max-width: 992px) {
   .parallax-container .section {
