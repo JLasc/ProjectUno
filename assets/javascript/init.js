@@ -1,5 +1,6 @@
 (function($){
   $(function(){
+    $('.collapsible').collapsible();
     $('.sidenav').sidenav();
     $('.parallax').parallax();
     $('.modal').modal();

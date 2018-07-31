@@ -6,7 +6,8 @@
  * Made By MaterializeCSS.com
  */
 
-a, nav {
+a,
+nav {
   color: #444;
 }
 
@@ -32,19 +33,42 @@ p {
   width: 90%;
 }
 
-#email{
+#email {
   margin-right: 10px;
 }
 
-#navbar{
+#navbar {
   background: linear-gradient(rgb(43, 43, 83), rgb(66, 66, 129));
   color: white;
   /* background-color: rgb(43, 43, 83); */
 }
-#logo-container img{
+#logo-container img {
   margin-top: 5px;
-  width:60%;
-  
+  width: 60%;
+}
+
+.x {
+  background: linear-gradient(gray, rgb(92, 92, 92));
+  color: rgb(88, 88, 88);
+  width: 60px;
+  padding: 25px;
+  padding-left: 26px;
+  margin-right: auto;
+  display: block;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-right: 1px solid rgb(88, 88, 88);
+  font-size: 125%;
+  font-weight: bold;
+}
+
+.x:hover {
+  color: rgb(141, 141, 141);
+  box-shadow: inset -9px 0 9px -7px rgba(0, 0, 0, 0.4);
+}
+
+.title{
+  float:left;
 }
 
 @media only screen and (max-width: 992px) {

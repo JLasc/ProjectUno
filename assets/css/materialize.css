@@ -3368,9 +3368,9 @@ span.badge {
   margin-left: 14px;
   text-align: center;
   font-size: 1rem;
-  line-height: 22px;
-  height: 22px;
-  color: #757575;
+  line-height: 45px;
+  height: 45px;
+  color: white;
   float: right;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -3421,6 +3421,7 @@ table span.badge {
 
 /* This is needed for some mobile phones to display the Google Icon font properly */
 .material-icons {
+  line-height: 45px;
   text-rendering: optimizeLegibility;
   -webkit-font-feature-settings: 'liga';
      -moz-font-feature-settings: 'liga';
@@ -5841,6 +5842,7 @@ body.keyboard-focused .dropdown-content li:focus {
   border-right: 1px solid #ddd;
   border-left: 1px solid #ddd;
   margin: 0.5rem 0 1rem 0;
+  
 }
 
 .collapsible-header {
@@ -5851,9 +5853,14 @@ body.keyboard-focused .dropdown-content li:focus {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   line-height: 1.5;
-  padding: 1rem;
+  padding: 5px;
+  padding-left: 1rem;
+  line-height: 45px;
+  
   background-color: #fff;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid black;
+  color: white;
+  background: linear-gradient(gray, rgb(92, 92, 92));
 }
 
 .collapsible-header:focus {
@@ -5866,6 +5873,7 @@ body.keyboard-focused .dropdown-content li:focus {
   display: inline-block;
   text-align: center;
   margin-right: 1rem;
+  
 }
 
 .keyboard-focused .collapsible-header:focus {
@@ -5878,6 +5886,7 @@ body.keyboard-focused .dropdown-content li:focus {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 2rem;
+  color: black;
 }
 
 .sidenav .collapsible,
