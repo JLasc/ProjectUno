@@ -107,8 +107,17 @@ p {
 
 }
 #download-button:focus{
-  background-color: rgb(43, 43, 83)
+  background-color: rgb(43, 43, 83);
 
+}
+
+.tabs{
+  border-bottom: 2px solid rgb(43, 43, 83);
+}
+
+label .active{
+  /* border-bottom: 1px solid rgb(43, 43, 83); */
+  color: rgb(43, 43, 83);
 }
 
 @media only screen and (max-width: 992px) {
