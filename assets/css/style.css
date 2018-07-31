@@ -6,8 +6,7 @@
  * Made By MaterializeCSS.com
  */
 
-nav ul a,
-nav .brand-logo {
+a, nav {
   color: #444;
 }
 
@@ -35,6 +34,17 @@ p {
 
 #email{
   margin-right: 10px;
+}
+
+#navbar{
+  background: linear-gradient(rgb(43, 43, 83), rgb(66, 66, 129));
+  color: white;
+  /* background-color: rgb(43, 43, 83); */
+}
+#logo-container img{
+  margin-top: 5px;
+  width:60%;
+  
 }
 
 @media only screen and (max-width: 992px) {
