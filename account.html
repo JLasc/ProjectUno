@@ -12,20 +12,27 @@
   <link href="https://fonts.googleapis.com/css?family=Anton|Do+Hyeon|Titillium+Web" rel="stylesheet">
 </head>
 <body>
-  <nav class="white" id="navbar" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo"><img src="./assets/images/WeatherLogo.svg"></a>
-       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Login</a></li>
-         
-      </ul>
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
+    <nav class="white" id="navbar" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo"><img src="./assets/images/WeatherLogo.svg"></a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a class="waves-effect waves-light btn modal-trigger" id="navLoginButton" href="#signOut">Logout</a>
+            </li>
+            <li>
+              <a class="waves-effect waves-light btn modal-trigger" id="navSignUpButton" href="#signIn">Account</a>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="sidenav">
+            <li>
+              <a href="#">Navbar Link</a>
+            </li>
+          </ul>
+          <a href="#" data-target="nav-mobile" class="sidenav-trigger">
+            <i class="material-icons">menu</i>
+          </a>
+        </div>
+      </nav>
 
   <!-- <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
