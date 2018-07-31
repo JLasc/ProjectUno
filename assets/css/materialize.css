@@ -5222,7 +5222,7 @@ small {
 .btn-large[disabled]:hover,
 .btn-small[disabled]:hover,
 .btn-flat[disabled]:hover {
-  background-color: #DFDFDF !important;
+  /* background-color: #DFDFDF !important; */
   color: #9F9F9F !important;
 }
 
@@ -5251,8 +5251,8 @@ small {
 
 .btn, .btn-large, .btn-small {
   text-decoration: none;
-  color: #fff;
-  background-color: #26a69a;
+  color: rgb(43, 43, 83);
+  background-color:white;
   text-align: center;
   letter-spacing: .5px;
   -webkit-transition: background-color .2s ease-out;
@@ -5667,7 +5667,7 @@ body.keyboard-focused .dropdown-content li:focus {
 }
 
 .waves-effect.waves-light .waves-ripple {
-  background-color: rgba(255, 255, 255, 0.45);
+  /* background-color: rgba(255, 255, 255, 0.45); */
 }
 
 .waves-effect.waves-red .waves-ripple {

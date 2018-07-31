@@ -23,7 +23,7 @@ p {
   min-height: 380px;
   line-height: 0;
   height: auto;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgb(43, 43, 83);
 }
 .parallax-container .section {
   width: 100%;
@@ -69,6 +69,46 @@ p {
 
 .title{
   float:left;
+}
+
+.question{
+  color: white;
+}
+
+.btn:hover{
+  color: white;
+}
+
+#download-button{
+  color: white;
+}
+
+#navLoginButton:active{
+  background-color: rgb(66, 66, 129);
+
+}
+
+#navLoginButton:focus{
+  background-color: white;
+
+}
+
+#navSignUpButton:active{
+  background-color: rgb(66, 66, 129);
+
+}
+#navSignUpButton:focus{
+  background-color: white;
+
+}
+
+#download-button:active{
+  background-color: rgb(66, 66, 129);
+
+}
+#download-button:focus{
+  background-color: rgb(43, 43, 83)
+
 }
 
 @media only screen and (max-width: 992px) {
