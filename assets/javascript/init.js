@@ -1,5 +1,6 @@
 (function($){
   $(function(){
+    $('select').formSelect();
     $('.timepicker').timepicker();
     $('.datepicker').datepicker();
     $('.collapsible').collapsible();
