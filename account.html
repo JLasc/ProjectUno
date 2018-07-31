@@ -34,34 +34,52 @@
         </div>
       </nav>
 
-  <!-- <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center teal-text text-lighten-2">WEATHER 2 DO IT</h1>
-        <div class="row center">
-          <h5 class="header col s12 light">Weather is the question.</h5>
-        </div>
-        <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">How it works</a>
-        </div>
-        <br><br>
-
-      </div>
-    </div>
-    <div class="parallax"><img src="./assets/images/rainy.jpg" alt="Unsplashed background img 1"></div>
-  </div> -->
-
-
   <div class="container">
+      <div class="section weather">
+          <div class="col s12 center">
+            <img src="assets/images/1.png">
+            <img src="assets/images/1.png">
+            <img src="assets/images/1.png">
+            <img src="assets/images/1.png">
+            <img src="assets/images/1.png">
+          </div>
+       
+      </div>
     <div class="section">
-        <div class="form"></div>
-    
+      <form class="col s12 addtask">
+        <h5>ADD TO-DO</h5>
+        <div id="addtodo">
+           <div class="row short">
+            <div class="input-field col s12 short">
+              <input id="title" type="text" class="validate">
+              <label for="title">To-Do</label>
+            </div>
+          </div>
+          <div class="row short">
+            <div class="input-field col s6 short">
+              <input id="date" type="text" class="validate datepicker">
+              <label for="date">Select Date...</label>
+            </div>
+            <div class="input-field col s6 short">
+              <input id="time" type="text" class="validate timepicker">
+              <label for="time">Select Time...</label>
+            </div>
+          </div>
+          <div class="row short">
+            <div class="input-field col s12 short">
+              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea1">To-Do Details</label>
+            </div>
+          </div>
+          <a class="waves-effect waves-light btn">Add</a>
+        </div>
+    </div>
+    </form>
     </div>
   </div>
 
 
-  <div class="parallax-container valign-wrapper">
+  <div class="parallax-container valign-wrapper small">
           
     <div class="section no-pad-bot">
        

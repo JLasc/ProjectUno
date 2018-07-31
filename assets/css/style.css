@@ -120,6 +120,33 @@ label .active{
   color: rgb(43, 43, 83);
 }
 
+span.badge:hover{
+  box-shadow: inset 7px 0 9px -4px rgba(0,0,0,0.4);
+  font-weight: bold;
+}
+
+.datepicker-day-button:active{
+  background-color: rgb(66, 66, 129);
+}
+
+.short{
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.small{
+  min-height: 0px;
+}
+
+.addtask{
+  margin-top: 25px;
+}
+
+.weather{
+  margin-top: 50px;
+}
+
+
 @media only screen and (max-width: 992px) {
   .parallax-container .section {
     position: absolute;
