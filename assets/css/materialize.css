@@ -3370,6 +3370,7 @@ span.badge {
   font-size: 1rem;
   line-height: 45px;
   height: 45px;
+  border-left: 1px solid black;
   color: white;
   float: right;
   -webkit-box-sizing: border-box;
@@ -5075,7 +5076,7 @@ small {
 }
 
 .tabs .tab a {
-  color: rgba(238, 110, 115, 0.7);
+  color: rgba(43, 43, 83, 0.7);
   display: block;
   width: 100%;
   height: 100%;
@@ -5088,13 +5089,14 @@ small {
 }
 
 .tabs .tab a:focus, .tabs .tab a:focus.active {
-  background-color: rgba(246, 178, 181, 0.2);
+  background-color: rgb(66, 66, 129);
   outline: none;
+  color:white;
 }
 
 .tabs .tab a:hover, .tabs .tab a.active {
   background-color: transparent;
-  color: #ee6e73;
+  color: rgb(66, 66, 129);
 }
 
 .tabs .tab.disabled a,
@@ -5107,7 +5109,7 @@ small {
   position: absolute;
   bottom: 0;
   height: 2px;
-  background-color: #f6b2b5;
+  background-color: rgb(43, 43, 83);
   will-change: left, right;
 }
 
@@ -5755,7 +5757,7 @@ body.keyboard-focused .dropdown-content li:focus {
   right: 0;
   background-color: #fafafa;
   padding: 0;
-  max-height: 70%;
+  max-height: 78%;
   width: 55%;
   margin: auto;
   overflow-y: auto;
@@ -5775,6 +5777,7 @@ body.keyboard-focused .dropdown-content li:focus {
 
 .modal .modal-content {
   padding: 24px;
+  height: auto;
 }
 
 .modal .modal-close {
@@ -5853,10 +5856,8 @@ body.keyboard-focused .dropdown-content li:focus {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   line-height: 1.5;
-  padding: 5px;
   padding-left: 1rem;
   line-height: 45px;
-  
   background-color: #fff;
   border-bottom: 1px solid black;
   color: white;
@@ -6226,9 +6227,9 @@ input[type=tel]:not(.browser-default):focus:not([readonly]),
 input[type=number]:not(.browser-default):focus:not([readonly]),
 input[type=search]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #26a69a;
-  -webkit-box-shadow: 0 1px 0 0 #26a69a;
-          box-shadow: 0 1px 0 0 #26a69a;
+  border-bottom: 1px solid rgb(43, 43, 83);
+  -webkit-box-shadow: 0 1px 0 0 rgb(43, 43, 83);
+          box-shadow: 0 1px 0 0 rgb(43, 43, 83);
 }
 
 input:not([type]):focus:not([readonly]) + label,
@@ -6244,7 +6245,7 @@ input[type=tel]:not(.browser-default):focus:not([readonly]) + label,
 input[type=number]:not(.browser-default):focus:not([readonly]) + label,
 input[type=search]:not(.browser-default):focus:not([readonly]) + label,
 textarea.materialize-textarea:focus:not([readonly]) + label {
-  color: #26a69a;
+  color: rgb(43, 43, 83);
 }
 
 input:not([type]):focus.valid ~ label,
@@ -6260,7 +6261,7 @@ input[type=tel]:not(.browser-default):focus.valid ~ label,
 input[type=number]:not(.browser-default):focus.valid ~ label,
 input[type=search]:not(.browser-default):focus.valid ~ label,
 textarea.materialize-textarea:focus.valid ~ label {
-  color: #4CAF50;
+  color: rgb(43, 43, 83);
 }
 
 input:not([type]):focus.invalid ~ label,
@@ -6321,9 +6322,9 @@ input[type=search].valid:not(.browser-default),
 input[type=search].valid:not(.browser-default):focus,
 textarea.materialize-textarea.valid,
 textarea.materialize-textarea.valid:focus, .select-wrapper.valid > input.select-dropdown {
-  border-bottom: 1px solid #4CAF50;
-  -webkit-box-shadow: 0 1px 0 0 #4CAF50;
-          box-shadow: 0 1px 0 0 #4CAF50;
+  border-bottom: 1px solid rgb(43, 43, 83);
+  -webkit-box-shadow: 0 1px 0 0 rgb(43, 43, 83);
+          box-shadow: 0 1px 0 0 rgb(43, 43, 83);
 }
 
 input.invalid:not([type]), input.invalid:not([type]):focus,
@@ -8723,7 +8724,7 @@ input[type=range]::-ms-thumb {
   -webkit-flex: 1 auto;
       -ms-flex: 1 auto;
           flex: 1 auto;
-  background-color: #26a69a;
+  background-color: rgb(66, 66, 129);
   color: #fff;
   padding: 20px 22px;
   font-weight: 500;
@@ -8781,11 +8782,12 @@ input[type=range]::-ms-thumb {
 }
 
 .datepicker-table td.is-today {
-  color: #26a69a;
+  color: white;
+  background-color: rgb(100, 100, 100);
 }
 
 .datepicker-table td.is-selected {
-  background-color: #26a69a;
+  background-color: rgb(66, 66, 129);
   color: #fff;
 }
 
@@ -8807,7 +8809,7 @@ input[type=range]::-ms-thumb {
 }
 
 .datepicker-day-button:focus {
-  background-color: rgba(43, 161, 150, 0.25);
+  background-color: rgb(66, 66, 129);
 }
 
 /* Footer */
@@ -8829,7 +8831,7 @@ input[type=range]::-ms-thumb {
 .datepicker-clear,
 .datepicker-today,
 .datepicker-done {
-  color: #26a69a;
+  color: rgb(66, 66, 129);
   padding: 0 1rem;
 }
 
@@ -8894,7 +8896,7 @@ input[type=range]::-ms-thumb {
   -webkit-flex: 1 auto;
       -ms-flex: 1 auto;
           flex: 1 auto;
-  background-color: #26a69a;
+  background-color: rgb(66, 66, 129);
   padding: 10px;
   font-weight: 300;
 }
@@ -8985,7 +8987,7 @@ input[type=range]::-ms-thumb {
 
 .timepicker-tick.active,
 .timepicker-tick:hover {
-  background-color: rgba(38, 166, 154, 0.25);
+  background-color: rgba(66, 66, 129, 0.25);
 }
 
 .timepicker-dial {
@@ -9015,7 +9017,7 @@ input[type=range]::-ms-thumb {
 }
 
 .timepicker-canvas line {
-  stroke: #26a69a;
+  stroke: rgb(66, 66, 129);
   stroke-width: 4;
   stroke-linecap: round;
 }
@@ -9026,12 +9028,12 @@ input[type=range]::-ms-thumb {
 
 .timepicker-canvas-bearing {
   stroke: none;
-  fill: #26a69a;
+  fill: rgb(66, 66, 129);
 }
 
 .timepicker-canvas-bg {
   stroke: none;
-  fill: #26a69a;
+  fill: rgb(66, 66, 129);
 }
 
 /* Footer */
@@ -9053,7 +9055,7 @@ input[type=range]::-ms-thumb {
 }
 
 .timepicker-close {
-  color: #26a69a;
+  color: rgb(66, 66, 129);
 }
 
 .timepicker-clear,
