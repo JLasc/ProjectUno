@@ -35,10 +35,13 @@ jQuery.ajaxPrefilter(function(options) {
     }
 });
 
+
 var meetupKey = "421f4e447d7a4c403e52346147257a50";
-var meetupURL = `https://api.meetup.com/find/groups?category=10&sign=true&key=${meetupKey}&zip=03801&radius=1`;
+var userZip = $("#userZip").val();
+var meetupURL = `https://api.meetup.com/find/groups?category=10&sign=true&key=${meetupKey}&zip=${userZip}&radius=1&event`;
 
 // AJAX call
+
 $.ajax({
     url: meetupURL,
     method: "GET"
@@ -46,9 +49,12 @@ $.ajax({
 }).then(function(response) {
 
     console.log(queryURL);
-    console.log(response);
+    console.log(response[0].name);
+    console.log(response[0].description);
+    console.log(response[0].city);
+    console.log(response[0].next_event);
+})
 
-});
 
 
 
