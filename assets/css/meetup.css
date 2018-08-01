@@ -1,0 +1,19 @@
+
+
+div.searchArea  {
+    height: 100%;
+    width: 500px;
+    margin: 100px auto;
+
+}
+
+div.input-field.radiusInput {
+ width: 200px !important;   
+}
+
+div.results-area {
+    height: 100%;
+    width: 500px;
+    margin: 100px auto;
+
+}
