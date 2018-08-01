@@ -61,7 +61,7 @@ $.ajax({
 //firebase user stuff
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-        console.log(user.email);
+        console.log(user.uid);
     } else {
         console.log("failed");
     }
@@ -70,12 +70,18 @@ firebase.auth().onAuthStateChanged(function(user) {
   $('#signUpButton').on("click",function() {
     var email = $('#signUpEmail').val();
     var password = $('#signUpPassword').val();
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-      });
+    var fullName = $('#first_name').val() + " " + $('#last_name').val();
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((user)=>{
+        user.updateProfile({
+            displayName: fullName
+        })
+    }).then(()=>{
+            window.location.href = "./account.html";
+    }).catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+    });
 })
 
 $('#loginButton').on("click",function() {
