@@ -85,7 +85,7 @@ p {
 
 #navLoginButton:active{
   background-color: rgb(66, 66, 129);
-
+  
 }
 
 #navLoginButton:focus{
@@ -173,3 +173,7 @@ span.badge:hover{
 footer.page-footer {
   margin: 0;
 }
+
+/* #navLoginButton, #navSignUpButton, #navDashboardbutton {
+  display: none;
+} */

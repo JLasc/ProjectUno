@@ -1,3 +1,16 @@
+
+$(document).ready(function () {
+
+    var url = window.location.href;
+    var two = url.split('/');
+    var three = two[two.length - 1]
+
+    //firebase user stuff
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user && three == "index.html") {
+            window.location.href = './account.html';
+        } 
+
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCZUrHNo6XXPn1AGm4JT-2w9I9mGANvIO4",
@@ -77,18 +90,6 @@ $.ajax({
     console.log(response[0].next_event);
 })
 
-
-
-
-//firebase user stuff
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        console.log(user.uid);
-    } else {
-        console.log("failed");
-    }
-  });
-
   $('#signUpButton').on("click",function() {
     var email = $('#signUpEmail').val();
     var password = $('#signUpPassword').val();
@@ -103,16 +104,43 @@ firebase.auth().onAuthStateChanged(function(user) {
     }).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
-    });
-})
 
-$('#loginButton').on("click",function() {
-    var email = $('#email').val();
-    var password = $('#password').val();
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        
-      });
+    });
+
+    $('#signUpButton').on("click", function () {
+        var email = $('#signUpEmail').val();
+        var password = $('#signUpPassword').val();
+        var fullName = $('#first_name').val() + " " + $('#last_name').val();
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then((user) => {
+                user.updateProfile({
+                    displayName: fullName
+                })
+            }).then(() => {
+                window.location.href = "./account.html";
+            }).catch(function (error) {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+            });
+    })
+
+    $('#loginButton').on("click", function () {
+        var email = $('#email').val();
+        var password = $('#password').val();
+        firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
+            window.location.href = "./account"
+        }).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+        });
+    })
+
+    $('#navLogoutButton').on("click", function () {
+        firebase.auth().signOut().then(function() {
+            window.location.href = "./index.html";
+          }, function(error) {
+            // An error happened.
+          });
+    })
 })
