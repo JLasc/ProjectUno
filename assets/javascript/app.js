@@ -9,7 +9,8 @@ $(document).ready(function () {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user && three == "index.html") {
             window.location.href = './account.html';
-        } 
+        }
+    })
 
   // Initialize Firebase
   var config = {
@@ -104,8 +105,8 @@ $.ajax({
     }).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
-
     });
+})
 
     $('#signUpButton').on("click", function () {
         var email = $('#signUpEmail').val();
@@ -137,10 +138,12 @@ $.ajax({
     })
 
     $('#navLogoutButton').on("click", function () {
-        firebase.auth().signOut().then(function() {
-            window.location.href = "./index.html";
-          }, function(error) {
-            // An error happened.
-          });
+        firebase.auth().signOut().then(function(){
+            window.location.href = "./account"
+        }).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+        });
     })
 })
