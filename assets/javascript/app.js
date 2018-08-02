@@ -7,7 +7,9 @@
     storageBucket: "projectuno-1532993271750.appspot.com",
     messagingSenderId: "1055512071549"
   };
+
   firebase.initializeApp(config);
+ 
 
 
 //open weather api
@@ -54,8 +56,6 @@ $.ajax({
     console.log(response[0].city);
     console.log(response[0].next_event);
 })
-
-
 
 
 //firebase user stuff
