@@ -14,7 +14,9 @@ $(document).ready(function () {
     storageBucket: "projectuno-1532993271750.appspot.com",
     messagingSenderId: "1055512071549"
   };
+
   firebase.initializeApp(config);
+ 
 
       //firebase user stuff
       firebase.auth().onAuthStateChanged(function (user) {
@@ -90,6 +92,17 @@ $.ajax({
     console.log(response[0].city);
     console.log(response[0].next_event);
 })
+
+
+//firebase user stuff
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        console.log(user.uid);
+    } else {
+        console.log("failed");
+    }
+  });
+
 
   $('#signUpButton').on("click",function() {
     var email = $('#signUpEmail').val();
