@@ -94,6 +94,7 @@ $.ajax({
   $('#signUpButton').on("click",function() {
     var email = $('#signUpEmail').val();
     var password = $('#signUpPassword').val();
+
     var fullName = $('#first_name').val() + " " + $('#last_name').val();
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((user)=>{
