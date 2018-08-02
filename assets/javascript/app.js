@@ -29,45 +29,7 @@ $(document).ready(function () {
     })
 var database = firebase.database();
 
-//open weather api
-var APIKey = "166a433c57516f51dfab1f7edaed8413";
-var weatherLocation = "Kittery,Maine"
-var weatherGood;
 
-// Building the URL we need to query the API
-var queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${weatherLocation}&appid=${APIKey}`;
-
-// AJAX call
-$.ajax({
-    url: queryURL,
-    method: "GET"
-
-}).then(function(response) {
-
-    console.log(queryURL);
-    console.log(response);
-    getWeatherState(response);       
-
-
-});
-
-// need definition of "good" weather
-var getWeatherState = function(response) {
-    if (response.main.temp >= 288 &&
-        response.main.humidity <= 70) {
-            weatherGood = true;
-            doStuff(true);
-        }
-
-    else {
-        weatherGood = false;
-        doStuff(false);
-    }
-}
-
-var doStuff = function() {
-    console.log("Good weather?: " + weatherGood);
-}
 
 //meetup api
 jQuery.ajaxPrefilter(function(options) {

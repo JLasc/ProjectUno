@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>WEATHER 2 Todo It</title>
+  <title>OpenWeather API Proto</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -14,13 +14,13 @@
 <body>
     <nav class="white" id="navbar" role="navigation">
         <div class="nav-wrapper container">
-            <a id="logo-container" href="./index.html" class="brand-logo"><img src="./assets/images/WeatherLogo.svg"></a>
+            <a id="logo-container" href="#" class="brand-logo"><img src="./assets/images/WeatherLogo.svg"></a>
           <ul class="right hide-on-med-and-down">
             <li>
-              <a class="waves-effect waves-light btn modal-trigger" id="navLogoutButton">Logout</a>
+              <a class="waves-effect waves-light btn modal-trigger" id="navLoginButton" href="#signOut">Logout</a>
             </li>
             <li>
-              <a class="waves-effect waves-light btn modal-trigger" id="navAccountButton" href="#signIn">Account</a>
+              <a class="waves-effect waves-light btn modal-trigger" id="navSignUpButton" href="#signIn">Account</a>
             </li>
           </ul>
           <ul id="nav-mobile" class="sidenav">
@@ -36,17 +36,13 @@
 
   <div class="container">
       <div class="section weather">
-          <div class="col s12 center">
-            <img id="day0" src="assets/images/1.png">
-            <img id="day1" src="assets/images/1.png">
-            <img id="day2" src="assets/images/1.png">
-            <img id="day3" src="assets/images/1.png">
-            <img id="day4" src="assets/images/1.png">
+          <div id= "forecast" class="col s12 center">
+            
           </div>
        
       </div>
     <div class="section">
-      <form class="col s12 addtask" id="taskform">
+      <form class="col s12 addtask">
         <h5>ADD TO-DO</h5>
         <div id="addtodo">
            <div class="row short">
@@ -65,7 +61,7 @@
               <label for="time">Select Time...</label>
             </div>
             <div class="input-field col s3 short">
-              <select class="tasks" id="todo">
+              <select class="tasks">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
@@ -74,7 +70,7 @@
               <label>Type of To-Do</label>
             </div>
             <div class="input-field col s3 short">
-              <select class="tasks" id="local">
+              <select class="tasks">
                 <option value="1">Outside</option>
                 <option value="2">Inside</option>
                 </select>
@@ -87,7 +83,7 @@
               <label for="textarea1">To-Do Details</label>
             </div>
           </div>
-          <a class="waves-effect waves-light btn" id="addtask">Add</a>
+          <a class="waves-effect waves-light btn">Add</a>
         </div>
     </div>
     </form>
@@ -102,8 +98,22 @@
       <div class="container">
          
         <!-- <div class="row center"> -->
-
-            <ul class="collapsible"></ul>
+            <ul class="collapsible">
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">filter_drama</i>
+                    First
+                    <span class="badge">X</span></div>
+                  <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">place</i>
+                    Second
+                    <span class="badge">X</span></div>
+                  <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+              </ul>
               <!-- <div class="x">X</div> -->
               
             <!-- </div> -->
@@ -168,11 +178,12 @@
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script> -->
+  
   <script src="assets/javascript/materialize.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
   <script src="assets/javascript/init.js"></script>
-  <script src="assets/javascript/app.js"></script>
-  <script src="assets/javascript/task.js"></script>
+  <script src="assets/javascript/weather.js"></script>
 
   </body>
 </html>
