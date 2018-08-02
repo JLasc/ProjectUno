@@ -5,13 +5,6 @@ $(document).ready(function () {
     var two = url.split('/');
     var three = two[two.length - 1]
 
-    //firebase user stuff
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user && three == "index.html") {
-            window.location.href = './account.html';
-        }
-    })
-
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCZUrHNo6XXPn1AGm4JT-2w9I9mGANvIO4",
@@ -22,6 +15,13 @@ $(document).ready(function () {
     messagingSenderId: "1055512071549"
   };
   firebase.initializeApp(config);
+
+      //firebase user stuff
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user && three == "index.html") {
+            window.location.href = './account.html';
+        }
+    })
 
 
 //open weather api
@@ -140,7 +140,7 @@ $.ajax({
 
     $('#navLogoutButton').on("click", function () {
         firebase.auth().signOut().then(function(){
-            window.location.href = "./account"
+            window.location.href = "./index.html"
         }).catch(function (error) {
             // Handle Errors here.
             var errorCode = error.code;
