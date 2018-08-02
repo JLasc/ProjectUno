@@ -14,7 +14,7 @@
 <body>
     <nav class="white" id="navbar" role="navigation">
         <div class="nav-wrapper container">
-            <a id="logo-container" href="#" class="brand-logo"><img src="./assets/images/WeatherLogo.svg"></a>
+            <a id="logo-container" href="./index.html" class="brand-logo"><img src="./assets/images/WeatherLogo.svg"></a>
           <ul class="right hide-on-med-and-down">
             <li>
               <a class="waves-effect waves-light btn modal-trigger" id="navLogoutButton">Logout</a>
@@ -46,7 +46,7 @@
        
       </div>
     <div class="section">
-      <form class="col s12 addtask">
+      <form class="col s12 addtask" id="taskform">
         <h5>ADD TO-DO</h5>
         <div id="addtodo">
            <div class="row short">
@@ -87,7 +87,7 @@
               <label for="textarea1">To-Do Details</label>
             </div>
           </div>
-          <a class="waves-effect waves-light btn">Add</a>
+          <a class="waves-effect waves-light btn" id="addtask">Add</a>
         </div>
     </div>
     </form>
@@ -180,13 +180,11 @@
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script> -->
-  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-  
   <script src="assets/javascript/materialize.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
   <script src="assets/javascript/init.js"></script>
   <script src="assets/javascript/app.js"></script>
+  <script src="assets/javascript/task.js"></script>
 
   </body>
 </html>
