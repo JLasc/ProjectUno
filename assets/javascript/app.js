@@ -5,6 +5,8 @@ $(document).ready(function () {
     var two = url.split('/');
     var three = two[two.length - 1]
 
+    var uid = "";
+
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCZUrHNo6XXPn1AGm4JT-2w9I9mGANvIO4",
@@ -20,6 +22,7 @@ $(document).ready(function () {
 
       //firebase user stuff
       firebase.auth().onAuthStateChanged(function (user) {
+        uid = user.uid;
         if (user && three == "index.html") {
             window.location.href = './account.html';
         }
@@ -93,17 +96,6 @@ $.ajax({
     console.log(response[0].next_event);
 })
 
-
-//firebase user stuff
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        console.log(user.uid);
-    } else {
-        console.log("failed");
-    }
-  });
-
-
   $('#signUpButton').on("click",function() {
     var email = $('#signUpEmail').val();
     var password = $('#signUpPassword').val();
@@ -163,6 +155,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     $('#addtask').on("click", function(event){
         event.preventDefault();
+            console.log(uid);
             var title = $('#title').val().trim();
             var date = $('#date').val().trim();
             var time = $('#time').val().trim();
@@ -177,7 +170,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 tasks: tasks,
                 local: local,
                 details: details,
-                // uid: uid
+                uid: uid
               });
         
         });
