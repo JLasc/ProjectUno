@@ -17,10 +17,10 @@
             <a id="logo-container" href="#" class="brand-logo"><img src="./assets/images/WeatherLogo.svg"></a>
           <ul class="right hide-on-med-and-down">
             <li>
-              <a class="waves-effect waves-light btn modal-trigger" id="navLoginButton" href="#signOut">Logout</a>
+              <a class="waves-effect waves-light btn modal-trigger" id="navLogoutButton">Logout</a>
             </li>
             <li>
-              <a class="waves-effect waves-light btn modal-trigger" id="navSignUpButton" href="#signIn">Account</a>
+              <a class="waves-effect waves-light btn modal-trigger" id="navAccountButton" href="#signIn">Account</a>
             </li>
           </ul>
           <ul id="nav-mobile" class="sidenav">
@@ -65,7 +65,7 @@
               <label for="time">Select Time...</label>
             </div>
             <div class="input-field col s3 short">
-              <select class="tasks">
+              <select class="tasks" id="todo">
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">Option 1</option>
                 <option value="2">Option 2</option>
@@ -74,7 +74,7 @@
               <label>Type of To-Do</label>
             </div>
             <div class="input-field col s3 short">
-              <select class="tasks">
+              <select class="tasks" id="local">
                 <option value="1">Outside</option>
                 <option value="2">Inside</option>
                 </select>
@@ -103,9 +103,7 @@
          
         <!-- <div class="row center"> -->
             <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">filter_drama</i>
+                <li><div class="collapsible-header"><i class="material-icons">filter_drama</i>
                     First
                     <span class="badge">X</span></div>
                   <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
@@ -183,6 +181,7 @@
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
   
   <script src="assets/javascript/materialize.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
