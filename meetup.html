@@ -38,90 +38,194 @@
       </nav>
 
 <!-- Main Content -->
-  <div class="container searchField">
 
-    <div class="searchArea">
-      
-        <div class="row">
-            <form class="col s12">
-              <div class="row">
-                <div class="input-field col s6">
-                  <input placeholder="Search" id="first_name" type="text" class="validate">
-                  <label for="first_name"></label>
-                </div>
-                <div class="input-field col s6">
-                  <input id="userZip" type="text" class="validate">
-                  <label for="userZip">Zip</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <input value="" id="userRadius" type="text" class="validate">
-                  <label for="userRadius">Radius</label>
-                </div>
-              </div>
-              <button id="meetupBtn">Submit</button>
+  <div class="container">
+      <div class="section weather">
+          <div class="col s12 center">
+            <img id="day0" src="assets/images/1.png">
+            <img id="day1" src="assets/images/1.png">
+            <img id="day2" src="assets/images/1.png">
+            <img id="day3" src="assets/images/1.png">
+            <img id="day4" src="assets/images/1.png">
+          </div>
+       
+      </div>
+    <div class="section">
+      <form class="col s12 addtask" id="taskform">
+        <h5>ADD TO-DO</h5>
+        <div id="addtodo">
+           <div class="row short">
+            <div class="input-field col s12 short">
+              <input id="title" type="text" class="validate">
+              <label for="title">To-Do</label>
             </div>
+          </div>
+          <div class="row short">
+            <div class="input-field col s3 short">
+              <input id="date" type="text" class="validate datepicker">
+              <label for="date">Select Date...</label>
+            </div>
+            <div class="input-field col s3 short">
+              <input id="time" type="text" class="validate timepicker">
+              <label for="time">Select Time...</label>
+            </div>
+            <div class="input-field col s3 short">
+              <select class="tasks" id="todo">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </select>
+              <label>Type of To-Do</label>
+            </div>
+            <div class="input-field col s3 short">
+              <select class="tasks" id="local">
+                <option value="1">Outside</option>
+                <option value="2">Inside</option>
+                </select>
+              <label>Type</label>
+            </div>
+          </div>
+          <div class="row short">
+            <div class="input-field col s12 short">
+              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea1">To-Do Details</label>
+            </div>
+          </div>
+          <a class="waves-effect waves-light btn" id="addtask">Add</a>
+        </div>
+    </div>
+    </form>
+    </div>
+  </div>
 
-   </div>  
 
+  <div class="parallax-container valign-wrapper small">
+          
+    <div class="section no-pad-bot">
+       
+      <div class="container">
+         
+        <!-- <div class="row center"> -->
 
-   <div class="results-area">
-      Search Results:
-      <hr>
-      <div id="search-results">
+            <ul class="collapsible"></ul>
+              <!-- <div class="x">X</div> -->
+              
+            <!-- </div> -->
+        
+          
+        </div>
+      </div>
+    </div>
+   </div>
 
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+          <div class="col s12 center">
+            
+          </div>
+       
       </div>
 
-
-   </div>
+    </div>
   </div>
 
 
 
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger red white-text" href="#modal1">Meetup Search</a>
+
+  <!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet">
+  <div class="modal-content">
+    <div class="container searchField">
+      <img class="meetup-logo center-align" src="assets/images/meetup-logo.svg">
+      <div class="searchArea">
+        <div class="row">
+          <div class="input-field col s12 m4">
+            <input placeholder="Search" id="searchInput" type="text" class="validate">
+            <label for="searchInput"></label>
+          </div>
+        </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input value="" id="zipInput" type="number" class="validate">
+              <label for="zipInput">Zipcode</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input value="" id="userRadius" type="number" class="validate">
+              <label for="userRadius">Within (Miles)</label>
+            </div>
+          </div>
+          <a class="waves-effect waves-light btn-large" id="meetupBtn">
+            <i class="group"></i>Search</a>
+        </div>
+
+        <div class="results-area">
+          <h3>Search Results</h3>
+          <hr>
+          <div id="search-results">
+
+          </div>
+
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+<!-- Start of the footer -->
+<footer class="page-footer teal">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Company Bio</h5>
+        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Settings</h5>
+        <ul>
+          <li><a class="white-text" href="#!">Link 1</a></li>
+          <li><a class="white-text" href="#!">Link 2</a></li>
+          <li><a class="white-text" href="#!">Link 3</a></li>
+          <li><a class="white-text" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Connect</h5>
+        <ul>
+          <li><a class="white-text" href="#!">Link 1</a></li>
+          <li><a class="white-text" href="#!">Link 2</a></li>
+          <li><a class="white-text" href="#!">Link 3</a></li>
+          <li><a class="white-text" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    Made with <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+    </div>
+  </div>
+</footer>
 
 
   
-<!-- Start of the footer -->
-  <footer class="page-footer teal">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
 
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made with <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
-    </div>
-  </footer>
 
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="assets/javascript/moment.js"></script>
  <!--  <script src="assets/javascript/app.js"></script> -->
   <script src="assets/javascript/meetup.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script> -->

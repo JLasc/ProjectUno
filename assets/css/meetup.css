@@ -17,3 +17,18 @@ div.results-area {
     margin: 100px auto;
 
 }
+
+input#userRadius {
+    width: 150px;
+    margin: 0 auto;
+}
+
+input#zipInput {
+    width: 150px;
+}
+
+.meetup-logo {
+    width: 250px;
+    height: 250px;
+    margin-bottom: -160px;
+}
