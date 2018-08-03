@@ -1,20 +1,22 @@
 //open weather api
 var APIKey = "166a433c57516f51dfab1f7edaed8413";
-// var weatherLocation = "Kittery,Maine";
-var userZip = "61568";
+
+var userZip = "03903";
 var weatherGood;
 
-// Building the URL we need to query the API
-var queryURL = `https://api.openweathermap.org/data/2.5/forecast/daily?zip=${userZip}&appid=${APIKey}&cnt=5`;
+// need on-click function for passing zip code --> userZip
+
+// Building the URL we need to query the OpenWeather API
+var weatherURL = `https://api.openweathermap.org/data/2.5/forecast/daily?zip=${userZip}&appid=${APIKey}&cnt=5`;
 
 // AJAX call
 $.ajax({
-    url: queryURL,
+    url: weatherURL,
     method: "GET"
 
 }).then(function(response) {
 
-    console.log(queryURL);
+    console.log(weatherURL);
     console.log(response);
     getWeatherState(response);       
 
@@ -24,21 +26,35 @@ $.ajax({
 // need definition of "good" weather
 var getWeatherState = function(response) {
     
-    for (i=0; i <=5; i++) {
+    for (i=0; i < response.list.length; i++) {
+        //convert UNIX time from response array to new date usable by moment.js
+        var currentDate = new Date(response.list[i].dt * 1000);
+        console.log("Current Date: " + currentDate);
+
+        // get DAY from currentDate
+        var currentDay = moment(currentDate).format("dddd");
+        console.log("Current Day: " + currentDay);
+
         if (response.list[i].temp.day >= 288 &&
             response.list[i].humidity <= 70) {
                 weatherGood = true;
-                $("#forecast").append(`<img id='day${i}' src='assets/images/30.png'>`)
-                    .append(`<p> Day ${i}`);
+                console.log(i);
+                console.log(response.list[i].dt);
+                console.log(currentDay);
+                $("#forecast").append(`<img id='day${i}' class = 'icons' src='assets/images/30.png'>`)
+                    .append(`<p>${currentDay}`);
                 console.log("good" + i)
                 doStuff(true);
             }
 
         else {
-            weatherGood = false;
-            $("#forecast").append(`<img id='day${i}' src='assets/images/1.png'>`)
-                    .append(`<p> Day ${i}`);
-            console.log("bad" + i)
+            weatherGood = false;            
+            $("#forecast").append(`<img id='day${i}' class = 'icons' src='assets/images/1.png'>`)
+                    .append(`<p>${currentDay}`);
+            console.log(i);
+            console.log(response.list[i].dt);
+            console.log(currentDay);
+            console.log("bad" + i);
             doStuff(false);
         }
     }
