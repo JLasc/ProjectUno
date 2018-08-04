@@ -39,7 +39,7 @@ $(document).ready(function () {
     //meetup api
     jQuery.ajaxPrefilter(function (options) {
         if (options.crossDomain && jQuery.support.cors) {
-            options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+            options.url = 'https://cryptic-headland-94862.herokuapp.com/' + options.url;
         }
     });
 
@@ -146,11 +146,17 @@ $(document).ready(function () {
 
     function getTasks(uid) {
         database.ref("/tasks").orderByChild('uid').equalTo(uid).on("value", function (snapshot) {
-            console.log(snapshot.val());
+            $('.collapsible').empty();
             snapshot.forEach(element => {
-                console.log(element.val().title)
-                $(".collapsible").prepend("<li><div class='collapsible-header'><i class='material-icons'>filter_drama</i>" + element.val().title + "<span class='badge'>X</span></div><div class='collapsible-body'><p>" + element.val().details + "</div></li>")
+                var id = element.key;
+                $(".collapsible").prepend("<li><div class='collapsible-header'><i class='material-icons'>filter_drama</i>" + element.val().title + "<span class='badge' data="+id+">X</span></div><div class='collapsible-body'><p>" + element.val().details + "</div></li>")
             });
         });
     }
+
+    $(document).on('click', '.badge', function(){
+        key = $(this).attr('data')
+        database.ref('/tasks').child(key).remove();
+        console.log("removed")
+      })
 })
