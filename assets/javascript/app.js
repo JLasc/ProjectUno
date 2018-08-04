@@ -51,7 +51,7 @@ $.ajax({
 
 }).then(function(response) {
 
-    console.log(queryURL);
+    // console.log(queryURL);
     console.log(response[0].name);
     console.log(response[0].description);
     console.log(response[0].city);
@@ -138,7 +138,7 @@ $.ajax({
         });
         
         database.ref("/tasks").orderByChild('uid').equalTo(uid).on("value", function(snapshot)  {
-            for (var i=0; i < snapshot.lenght; i++){
+            for (var i=0; i < snapshot.length; i++){
                 $(".collapsible").prepend("<li><div class='collapsible-header'><i class='material-icons'>filter_drama</i>" + snapshot.val().title + "<span class='badge'>X</span></div><div class='collapsible-body'><p>" + snapshot.val().details + "</div></li>")
             }
 
