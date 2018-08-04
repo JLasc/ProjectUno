@@ -41,16 +41,16 @@ var getWeatherState = function(response) {
                 console.log(i);
                 console.log(response.list[i].dt);
                 console.log(currentDay);
-                $("#forecast").append(`<img id='day${i}' class = 'icons' src='assets/images/30.png'>`)
-                    .append(`<p>${currentDay}`);
+                $("#forecast").append(`<div class='weatherToday' id='day${i}'><img id='day${i}' class = 'icons' src='assets/images/30.png'><p>${currentDay}</div>`);
+                    // .append(``);
                 console.log("good" + i)
                 doStuff(true);
             }
 
         else {
             weatherGood = false;            
-            $("#forecast").append(`<img id='day${i}' class = 'icons' src='assets/images/1.png'>`)
-                    .append(`<p>${currentDay}`);
+            $("#forecast").append(`<div class='weatherToday'><img id='day${i}' class = 'icons' src='assets/images/1.png'><p>${currentDay}</div>`);
+                    
             console.log(i);
             console.log(response.list[i].dt);
             console.log(currentDay);
