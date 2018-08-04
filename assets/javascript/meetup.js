@@ -1,6 +1,6 @@
-// AJAX call
-
-//meetup api
+$("#clearBtn").on("click", function() {
+    $("#search-results").empty()
+});
 
 $("#meetupBtn").on("click", function() {
     event.preventDefault();
@@ -8,14 +8,15 @@ $("#meetupBtn").on("click", function() {
 //meetup api
 jQuery.ajaxPrefilter(function(options) {
     if (options.crossDomain && jQuery.support.cors) {
-        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+        options.url = 'https://cryptic-headland-94862.herokuapp.com/' + options.url;
     }
 });
 
 var meetupKey = "421f4e447d7a4c403e52346147257a50";
 var searchInput = $("#searchInput").val().trim();
 var zipInput = $("#zipInput").val().trim();
-var meetupURL = `https://api.meetup.com/find/groups?sign=true&key=${meetupKey}&zip=${zipInput}&page=6&text=${searchInput}&radius=5`;
+var radiusInput = $("#userRadius").val().trim();
+var meetupURL = `https://api.meetup.com/find/groups?sign=true&key=${meetupKey}&zip${zipInput}&upcoming_events=true&page=10&text=${searchInput}&radius=${radiusInput}`;
 
 
 $.ajax({
@@ -24,13 +25,8 @@ $.ajax({
 
 }).then(function(response) {
     console.log(response)
-    console.log(response[0].name);
-    console.log(response[0].description);
-    console.log(response[0].city);
-    console.log(response[0].next_event);
-    console.log(response.length)
 
-
+    $("#search-results").empty()
 
     for (var i = 0; i < response.length; i++){
 
@@ -43,23 +39,22 @@ $.ajax({
             </div>
             <div class="card-stacked">
                 <div class="card-content">
-                </b><span class="badge blue"> <b>Members: </b>${response[i].members}</span>
-                <b>Next Event: </b>${response[i].next_event.name}<br>
-                <b>Time: </b>${moment(response[i].next_event.time).format('MMMM Do YYYY, h:mm:ss a')}<br>
-                <b>Location: </b>${response[i].localized_location}
+                </b><span class="badge blue"> <b>Members: </b>${response[i].members}</span><br>
+                <b>Created: </b>${moment(response[i].created).format('MMMM Do YYYY, h:mm:ss a')}<br>
+                <b>Status: </b>${response[i].status}<br>
+                <b>Location: </b>${response[i].localized_location}<br>
+                <b>Next Event: </b>${moment(response[i].next_event.time).format('MMMM Do YYYY, h:mm:ss a')}<br>
                 <div class="card-action">
-                <a href="${response[i].link}">Join this event</a>
+                <a href="${response[i].link}" target="_blank">Join this event</a>
                 </div>
             </div>
             </div>
             </div>
         `
+
         $("#search-results").append(contentCard)
     };
 
-        
-
-    
 
 
 })
