@@ -144,6 +144,22 @@ $(document).ready(function () {
             uid: uid
         });
 
+
+    $("#home-btn").on("click", function() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+        
+        database.ref("/tasks").orderByChild('uid').equalTo(uid).on("value", function(snapshot)  {
+            for (var i=0; i < snapshot.lenght; i++){
+                $(".collapsible").prepend("<li><div class='collapsible-header'><i class='material-icons'>filter_drama</i>" + snapshot.val().title + "<span class='badge'>X</span></div><div class='collapsible-body'><p>" + snapshot.val().details + "</div></li>")
+            }
+
+           
+           
+          
+          });
+
     });
 
     function getTasks(uid) {
@@ -162,5 +178,6 @@ $(document).ready(function () {
         database.ref('/tasks').child(key).remove();
         console.log("removed")
       })
+
 
 })

@@ -247,6 +247,17 @@ footer.page-footer {
 
 
 
+
+/* #navLoginButton, #navSignUpButton, #navDashboardbutton {
+  display: none;
+} */
+
+/* Footer maragin for buttons */
+div.footer-options li {
+  margin-bottom: 5px;
+}
+
+
 @media only screen and (max-width: 557px) {
   .weatherToday{
     width: 30%;
@@ -268,3 +279,4 @@ footer.page-footer {
   }
 
 }
+
