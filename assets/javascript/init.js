@@ -7,6 +7,15 @@
     $('.sidenav').sidenav();
     $('.parallax').parallax();
     $('.modal').modal();
-    $('.tabs').tabs();
+    var tabInstanse = $('.tabs').tabs();
+
+    $('#navSignUpButton').on('click', function(){
+      tabInstanse.tabs('select','signUp');
+    })
+
+    $('#navLoginButton').on('click', function(){
+      tabInstanse.tabs('select','login');
+    })
+
   }); // end of document ready
 })(jQuery); // end of jQuery name space
