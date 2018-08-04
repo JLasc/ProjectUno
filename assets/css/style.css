@@ -177,3 +177,9 @@ footer.page-footer {
 /* #navLoginButton, #navSignUpButton, #navDashboardbutton {
   display: none;
 } */
+
+/* Footer maragin for buttons */
+div.footer-options li {
+  margin-bottom: 5px;
+}
+
