@@ -136,6 +136,11 @@ $.ajax({
               });
         
         });
+
+    $("#home-btn").on("click", function() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
         
         database.ref("/tasks").orderByChild('uid').equalTo(uid).on("value", function(snapshot)  {
             for (var i=0; i < snapshot.lenght; i++){
