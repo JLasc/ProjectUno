@@ -36,11 +36,13 @@ $(document).ready(function () {
 
 
 
+
     //meetup api
     jQuery.ajaxPrefilter(function (options) {
         if (options.crossDomain && jQuery.support.cors) {
             options.url = 'https://cryptic-headland-94862.herokuapp.com/' + options.url;
         }
+
     });
 
 
@@ -152,6 +154,7 @@ $(document).ready(function () {
                 $(".collapsible").prepend("<li><div class='collapsible-header'><i class='material-icons'>filter_drama</i>" + element.val().title + "<span class='badge' data="+id+">X</span></div><div class='collapsible-body'><p>" + element.val().details + "</div></li>")
             });
         });
+
     }
 
     $(document).on('click', '.badge', function(){
@@ -159,4 +162,5 @@ $(document).ready(function () {
         database.ref('/tasks').child(key).remove();
         console.log("removed")
       })
+
 })
