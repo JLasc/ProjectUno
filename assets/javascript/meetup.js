@@ -4,7 +4,9 @@ $("#clearBtn").on("click", function() {
 
 $("#meetupBtn").on("click", function() {
     event.preventDefault();
-
+    $("#searchInput").val("");
+    $("#zipInput").val("");
+    
 //meetup api
 jQuery.ajaxPrefilter(function(options) {
     if (options.crossDomain && jQuery.support.cors) {

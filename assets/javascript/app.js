@@ -166,6 +166,11 @@ $(document).ready(function () {
         console.log(errorMessage);
       });
   });
+        
+        database.ref("/tasks").orderByChild('uid').equalTo(uid).on("value", function(snapshot)  {
+            for (var i=0; i < snapshot.lenght; i++){
+                $(".collapsible").prepend("<li><div class='collapsible-header'><i class='material-icons'>filter_drama</i>" + snapshot.val().title + "<span class='badge'>X</span></div><div class='collapsible-body'><p>" + snapshot.val().details + "</div></li>")
+            }
 
   $("#loginButton").on("click", function() {
     var email = $("#email").val();

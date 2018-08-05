@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="assets/css/meetup.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/css?family=Anton|Do+Hyeon|Titillium+Web" rel="stylesheet">
 </head>
 <body>
@@ -120,39 +121,74 @@
   </div>
 
 
+<!-- This is the beginnging of the Meetup API modal -->
+
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger white-text pulse meetupBtn" href="#modal1">Meetup Search</a>
+
+  <!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet">
+  <div class="modal-content">
+    <div class="container searchField">
+      <img class="meetup-logo center-align" src="assets/images/meetup-logo.svg">
+      <div class="searchArea">
+        <div class="row">
+          <div class="input-field col s12 m4">
+            <input placeholder="Search" id="searchInput" type="text" class="validate">
+            <label for="searchInput"></label>
+          </div>
+        </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input value="" id="zipInput" type="number" class="validate">
+              <label for="zipInput">Zipcode</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input value="5" id="userRadius" type="number" class="validate">
+              <label for="userRadius">Within (Miles)</label>
+            </div>
+          </div>
+          <a class="waves-effect waves-light btn-large" id="meetupBtn">
+            <i class="group"></i>Search</a>
+          <a class="waves-effect waves-light btn-large" id="clearBtn">
+            <i class="group"></i>Clear</a>
+        </div>
+
+        <div class="results-area">
+          <h3>Search Results</h3>
+          <hr>
+          <div id="search-results">
+
+          </div>
+
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
 
   <footer class="page-footer teal">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
+          <h5 class="white-text">Weather 2 Do It</h5>
+          <p class="grey-text text-lighten-4">We are a team of engineers using our experience with HTML, CSS, Javascript, jQuery, API's, and Materialize to showcase our abilities and work in a dev team. This application allows any user to create a persistent to-do list with additional APIs for current weather based on location, and the ability to look for current meet up groups in their area. 
 
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
+        <div class="col l3 s12 footer-options">
         </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made with <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      &copy; Copyright - Group 2 - Ian Cogswell, John Kerr, Jake Lehoux, and Jon Lascaze
       </div>
     </div>
   </footer>
@@ -163,6 +199,8 @@
   <script src="assets/javascript/materialize.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
   <script src="assets/javascript/init.js"></script>
+  <script src="assets/javascript/meetup.js"></script>
+  <script src="assets/javascript/moment.js"></script>
   <script src="assets/javascript/app.js"></script>
   <script src="assets/javascript/task.js"></script>
 
