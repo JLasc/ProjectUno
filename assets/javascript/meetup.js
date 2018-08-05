@@ -1,4 +1,5 @@
 $("#clearBtn").on("click", function() {
+
     $("#search-results").empty() 
 });
 
@@ -9,8 +10,6 @@ function formClear () {
 
 $("#meetupBtn").on("click", function() {
     event.preventDefault();
-    
-  
     
 //meetup api
 jQuery.ajaxPrefilter(function(options) {
@@ -23,7 +22,9 @@ var meetupKey = "421f4e447d7a4c403e52346147257a50";
 var searchInput = $("#searchInput").val().trim();
 var zipInput = $("#zipInput").val().trim();
 var radiusInput = $("#userRadius").val().trim();
+
 var meetupURL = `https://api.meetup.com/find/groups?sign=true&key=${meetupKey}&zip${zipInput}&upcoming_events=true&page=20&text=${searchInput}&radius=${radiusInput}`;
+
 
 
 $.ajax({
@@ -61,7 +62,6 @@ $.ajax({
 
         $("#search-results").append(contentCard)
     };
-
 
 
 });

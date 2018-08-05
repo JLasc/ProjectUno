@@ -1,25 +1,17 @@
-$('.addtask').on("submit", function(){
-    var title = $('#title').val().trim();
-    var date = $('#date').val().trim();
-    var time = $('#time').val().trim();
-    var tasks = $('#todo').val().trim();
-    var local = $('#local').val().trim();
-    var details = $('#textarea1').val().trim();
+// $(document).ready(function () {
 
-    database.ref("/tasks").push({
-        title: title,
-        date: date,
-        time: time,
-        tasks: tasks,
-        local: local,
-        details: details,
-        // uid: uid
-      });
+//     // var config = {
+//     //     apiKey: "AIzaSyCZUrHNo6XXPn1AGm4JT-2w9I9mGANvIO4",
+//     //     authDomain: "projectuno-1532993271750.firebaseapp.com",
+//     //     databaseURL: "https://projectuno-1532993271750.firebaseio.com",
+//     //     projectId: "projectuno-1532993271750",
+//     //     storageBucket: "projectuno-1532993271750.appspot.com",
+//     //     messagingSenderId: "1055512071549"
+//     //   };
+//     //   firebase.initializeApp(config);
+// var database = firebase.database();
 
-});
 
-database.ref("/tasks").on("child_added", function(snapshot) {
-    $(".collapsible").prepend("<li><div class='collapsible-header'><i class='material-icons'>filter_drama</i>" + snapshot.val().title + "<span class='badge'>X</span></div><div class='collapsible-body'><p>" + snapshot.val().details + "</div></li>"
-   
-    );
-  });
+
+
+// });

@@ -32,3 +32,8 @@ input#zipInput {
     height: 250px;
     margin-bottom: -160px;
 }
+
+a.meetupBtn {
+    background-color: rgb(66, 66, 129);
+}
+

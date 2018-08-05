@@ -3,18 +3,19 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Parallax Template - Materialize</title>
+  <title>WEATHER 2 Todo It</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="assets/css/meetup.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/css?family=Anton|Do+Hyeon|Titillium+Web" rel="stylesheet">
 </head>
 <body>
     <nav class="white" id="navbar" role="navigation">
         <div class="nav-wrapper container">
-            <a id="logo-container" href="#" class="brand-logo"><img src="./assets/images/WeatherLogo.svg"></a>
+            <a id="logo-container" href="./index.html" class="brand-logo"><img src="./assets/images/WeatherLogo.svg"></a>
           <ul class="right hide-on-med-and-down">
             <li>
               <a class="waves-effect waves-light btn modal-trigger" id="navLogoutButton">Logout</a>
@@ -37,16 +38,16 @@
   <div class="container">
       <div class="section weather">
           <div class="col s12 center">
-            <img src="assets/images/1.png">
-            <img src="assets/images/1.png">
-            <img src="assets/images/1.png">
-            <img src="assets/images/1.png">
-            <img src="assets/images/1.png">
+            <img id="day0" src="assets/images/1.png">
+            <img id="day1" src="assets/images/1.png">
+            <img id="day2" src="assets/images/1.png">
+            <img id="day3" src="assets/images/1.png">
+            <img id="day4" src="assets/images/1.png">
           </div>
        
       </div>
     <div class="section">
-      <form class="col s12 addtask">
+      <form class="col s12 addtask" id="taskform">
         <h5>ADD TO-DO</h5>
         <div id="addtodo">
            <div class="row short">
@@ -87,7 +88,7 @@
               <label for="textarea1">To-Do Details</label>
             </div>
           </div>
-          <a class="waves-effect waves-light btn">Add</a>
+          <a class="waves-effect waves-light btn" id="addtask">Add</a>
         </div>
     </div>
     </form>
@@ -100,28 +101,8 @@
     <div class="section no-pad-bot">
        
       <div class="container">
-         
-        <!-- <div class="row center"> -->
-            <ul class="collapsible">
-                <li><div class="collapsible-header"><i class="material-icons">filter_drama</i>
-                    First
-                    <span class="badge">X</span></div>
-                  <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-                </li>
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">place</i>
-                    Second
-                    <span class="badge">X</span></div>
-                  <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-                </li>
-              </ul>
-              <!-- <div class="x">X</div> -->
-              
-            <!-- </div> -->
-        
-          
-        </div>
+          <ul class="collapsible"></ul>    
+       </div>
       </div>
     </div>
    </div>
@@ -140,39 +121,74 @@
   </div>
 
 
+<!-- This is the beginnging of the Meetup API modal -->
+
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger white-text pulse meetupBtn" href="#modal1">Meetup Search</a>
+
+  <!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet">
+  <div class="modal-content">
+    <div class="container searchField">
+      <img class="meetup-logo center-align" src="assets/images/meetup-logo.svg">
+      <div class="searchArea">
+        <div class="row">
+          <div class="input-field col s12 m4">
+            <input placeholder="Search" id="searchInput" type="text" class="validate">
+            <label for="searchInput"></label>
+          </div>
+        </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input value="" id="zipInput" type="number" class="validate">
+              <label for="zipInput">Zipcode</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input value="5" id="userRadius" type="number" class="validate">
+              <label for="userRadius">Within (Miles)</label>
+            </div>
+          </div>
+          <a class="waves-effect waves-light btn-large" id="meetupBtn">
+            <i class="group"></i>Search</a>
+          <a class="waves-effect waves-light btn-large" id="clearBtn">
+            <i class="group"></i>Clear</a>
+        </div>
+
+        <div class="results-area">
+          <h3>Search Results</h3>
+          <hr>
+          <div id="search-results">
+
+          </div>
+
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
 
   <footer class="page-footer teal">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
+          <h5 class="white-text">Weather 2 Do It</h5>
+          <p class="grey-text text-lighten-4">We are a team of engineers using our experience with HTML, CSS, Javascript, jQuery, API's, and Materialize to showcase our abilities and work in a dev team. This application allows any user to create a persistent to-do list with additional APIs for current weather based on location, and the ability to look for current meet up groups in their area. 
 
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
+        <div class="col l3 s12 footer-options">
         </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made with <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      &copy; Copyright - Group 2 - Ian Cogswell, John Kerr, Jake Lehoux, and Jon Lascaze
       </div>
     </div>
   </footer>
@@ -180,13 +196,13 @@
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script> -->
-  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-  
   <script src="assets/javascript/materialize.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
   <script src="assets/javascript/init.js"></script>
+  <script src="assets/javascript/meetup.js"></script>
+  <script src="assets/javascript/moment.js"></script>
   <script src="assets/javascript/app.js"></script>
+  <script src="assets/javascript/task.js"></script>
 
   </body>
 </html>
