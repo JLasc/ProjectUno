@@ -1,3 +1,36 @@
+$(document).ready(function() {
+  var url = window.location.href;
+  var two = url.split("/");
+  var three = two[two.length - 1];
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCZUrHNo6XXPn1AGm4JT-2w9I9mGANvIO4",
+    authDomain: "projectuno-1532993271750.firebaseapp.com",
+    databaseURL: "https://projectuno-1532993271750.firebaseio.com",
+    projectId: "projectuno-1532993271750",
+    storageBucket: "projectuno-1532993271750.appspot.com",
+    messagingSenderId: "1055512071549"
+  };
+
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+  var auth = firebase.auth();
+
+  var uid = "";
+
+  //firebase user stuff
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      uid = user.uid;
+      getTasks(user.uid);
+    }
+    if (user && three == "index.html") {
+      window.location.href = "./account.html";
+    }
+  });
+
 
 $(document).ready(function () {
 
@@ -98,54 +131,147 @@ $(document).ready(function () {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
+
         });
-    })
+      })
+      .then(() => {
+        window.location.href = "./account.html";
+      })
+      .catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+      });
+  });
 
-    $('#addtask').on("click", function (event) {
-        event.preventDefault();
-        var title = $('#title').val().trim();
-        var date = $('#date').val().trim();
-        var time = $('#time').val().trim();
-        var tasks = $('#todo').val().trim();
-        var local = $('#local').val().trim();
-        var details = $('#textarea1').val().trim();
-
-        database.ref("/tasks").push({
-            title: title,
-            date: date,
-            time: time,
-            tasks: tasks,
-            local: local,
-            details: details,
-            uid: uid
+  $("#signUpButton").on("click", function() {
+    var email = $("#signUpEmail").val();
+    var password = $("#signUpPassword").val();
+    var fullName = $("#first_name").val() + " " + $("#last_name").val();
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(user => {
+        user.updateProfile({
+          displayName: fullName
         });
+      })
+      .then(() => {
+        window.location.href = "./account.html";
+      })
+      .catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode);
+        M.toast({ html: errorMessage });
+        console.log(errorMessage);
+      });
+  });
 
+  $("#loginButton").on("click", function() {
+    var email = $("#email").val();
+    var password = $("#password").val();
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(function() {
+        window.location.href = "./account";
+      })
+      .catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+      });
+  });
+
+  $("#navLogoutButton").on("click", function() {
+    firebase
+      .auth()
+      .signOut()
+      .then(function() {
+        window.location.href = "./index.html";
+      })
+      .catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+      });
+  });
+
+  $("#addtask").on("click", function(event) {
+    event.preventDefault();
+    var title = $("#title")
+      .val()
+      .trim();
+    var date = $("#date")
+      .val()
+      .trim();
+    var time = $("#time")
+      .val()
+      .trim();
+    var tasks = $("#todo")
+      .val()
+      .trim();
+    var local = $("#local")
+      .val()
+      .trim();
+    var details = $("#textarea1")
+      .val()
+      .trim();
+
+    database.ref("/tasks").push({
+      title: title,
+      date: date,
+      time: time,
+      tasks: tasks,
+      local: local,
+      details: details,
+      uid: uid
+    });
 
     $("#home-btn").on("click", function() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    });
-        
-        database.ref("/tasks").orderByChild('uid').equalTo(uid).on("value", function(snapshot)  {
-            for (var i=0; i < snapshot.lenght; i++){
-                $(".collapsible").prepend("<li><div class='collapsible-header'><i class='material-icons'>filter_drama</i>" + snapshot.val().title + "<span class='badge'>X</span></div><div class='collapsible-body'><p>" + snapshot.val().details + "</div></li>")
-            }
-
-           
-           
-          
-          });
-
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     });
 
-    function getTasks(uid) {
-        database.ref("/tasks").orderByChild('uid').equalTo(uid).on("value", function (snapshot) {
-            $('.collapsible').empty();
-            snapshot.forEach(element => {
-                var id = element.key;
-                $(".collapsible").prepend("<li><div class='collapsible-header'><i class='material-icons'>filter_drama</i>" + element.val().title + "<span class='badge' data="+id+">X</span></div><div class='collapsible-body'><p>" + element.val().details + "</div></li>")
-            });
+
+    database
+      .ref("/tasks")
+      .orderByChild("uid")
+      .equalTo(uid)
+      .on("value", function(snapshot) {
+        for (var i = 0; i < snapshot.lenght; i++) {
+          $(".collapsible").prepend(
+            "<li><div class='collapsible-header'><i class='material-icons'>filter_drama</i>" +
+              snapshot.val().title +
+              "<span class='badge'>X</span></div><div class='collapsible-body'><p>" +
+              snapshot.val().details +
+              "</div></li>"
+          );
+        }
+      });
+  });
+
+  function getTasks(uid) {
+    database
+      .ref("/tasks")
+      .orderByChild("uid")
+      .equalTo(uid)
+      .on("value", function(snapshot) {
+        $(".collapsible").empty();
+        snapshot.forEach(element => {
+          var id = element.key;
+          $(".collapsible").prepend(
+            "<li><div class='collapsible-header'><i class='material-icons'>filter_drama</i>" +
+              element.val().title +
+              "<span class='badge' data=" +
+              id +
+              ">X</span></div><div class='collapsible-body'><p>" +
+              element.val().details +
+              "</div></li>"
+          );
         });
+
 
     }
 
@@ -155,3 +281,4 @@ $(document).ready(function () {
       }) 
 
 })
+
