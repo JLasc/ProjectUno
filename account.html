@@ -15,6 +15,7 @@
 </head>
 
 <body>
+  <div id="siteContainer">
   <nav class="white" id="navbar" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="./index.html" class="brand-logo">
@@ -22,22 +23,28 @@
       </a>
       <ul class="right hide-on-med-and-down">
         <li>
-          <a class="waves-effect waves-light btn modal-trigger" id="navLogoutButton">Logout</a>
+          <a class="waves-effect waves-light btn modal-trigger navLogoutButton">Logout</a>
         </li>
         <li>
-          <a class="waves-effect waves-light btn modal-trigger" id="navAccountButton" href="#signIn">Account</a>
+          <a class="waves-effect waves-light btn modal-trigger navAccountButton" href="#signIn">Account</a>
         </li>
       </ul>
       <ul id="nav-mobile" class="sidenav">
         <li>
-          <a href="#">Navbar Link</a>
+          <a class="navLogoutButton">Logout</a>
         </li>
+        <li>
+            <a class="navAccountButton" href="#signIn">Account</a>
+          </li>
+        
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger">
         <i class="material-icons">menu</i>
       </a>
     </div>
   </nav>
+
+  <a class="waves-effect waves-light btn modal-trigger meetupBtn" href="#modal1">Meetup Search</a>
 
   <div class="container">
     <div class="section weather">
@@ -50,21 +57,21 @@
         <div id="addtodo">
           <div class="row short">
             <div class="input-field col s12 short">
-              <input id="title" type="text" class="validate">
+              <input id="title" type="text" class="validate" required>
               <label for="title">To-Do</label>
             </div>
           </div>
           <div class="row short">
             <div class="input-field col s3 short" id="dateDiv">
-              <input id="date" type="text" class="validate datepicker">
+              <input id="date" type="text" class="validate datepicker" required>
               <label for="date">Select Date...</label>
             </div>
-            <div class="input-field col s3 short" id="timeDiv">
+            <div class="input-field col s3 short" id="timeDiv" required>
               <input id="time" type="text" class="validate timepicker">
               <label for="time">Select Time...</label>
             </div>
             <div class="input-field col s3 short" id="optionDiv">
-              <select class="tasks" id="todo">
+              <select class="tasks" id="todo" required>
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">Exercise</option>
                 <option value="2">Food</option>
@@ -75,7 +82,7 @@
               <label>Type of To-Do</label>
             </div>
             <div class="input-field col s3 short" id="typeDiv">
-              <select class="tasks" id="local">
+              <select class="tasks" id="local" required>
                 <option value="1">Outside</option>
                 <option value="2">Inside</option>
               </select>
@@ -103,7 +110,7 @@
 <!-- This is the beginnging of the Meetup API modal -->
 
   <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger white-text pulse meetupBtn" href="#modal1">Meetup Search</a>
+  
 
   <!-- Modal Structure -->
 <div id="modal1" class="modal bottom-sheet">
@@ -111,27 +118,27 @@
     <div class="container searchField">
       <img class="meetup-logo center-align" src="assets/images/meetup-logo.svg">
       <div class="searchArea">
-        <div class="row">
+        <div class="row short">
           <div class="input-field col s12 m4">
             <input placeholder="Search" id="searchInput" type="text" class="validate">
             <label for="searchInput"></label>
           </div>
         </div>
-          <div class="row">
+          <div class="row short">
             <div class="input-field col s12">
               <input value="" id="zipInput" type="number" class="validate">
               <label for="zipInput">Zipcode</label>
             </div>
           </div>
-          <div class="row">
+          <div class="row short">
             <div class="input-field col s12">
               <input value="5" id="userRadius" type="number" class="validate">
               <label for="userRadius">Within (Miles)</label>
             </div>
           </div>
-          <a class="waves-effect waves-light btn-large" id="meetupBtn">
+          <a class="waves-effect waves-light btn" id="meetupBtn">
             <i class="group"></i>Search</a>
-          <a class="waves-effect waves-light btn-large" id="clearBtn">
+          <a class="waves-effect waves-light btn" id="clearBtn">
             <i class="group"></i>Clear</a>
         </div>
 
@@ -150,10 +157,10 @@
     </div>
   </div>
 
+</div>
 
 
-
-  <footer class="page-footer teal">
+  <footer class="page-footer">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
@@ -162,6 +169,17 @@
 
         </div>
         <div class="col l3 s12 footer-options">
+            <ul>
+                <li>
+                  <a class="white-text navLogoutButton">Logout</a>
+                </li>
+                <li>
+                    <a class="white-text navAccountButton" href="#signIn">Account</a>
+                </li>
+                <li>
+                  <a class="white-text" id="home-btn" href="#navbar">Scroll Top</a>
+                </li>
+              </ul>
         </div>
       </div>
     </div>

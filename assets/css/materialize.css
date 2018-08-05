@@ -5863,7 +5863,7 @@ body.keyboard-focused .dropdown-content li:focus {
   padding-left: 1rem;
   line-height: 45px;
   background-color: #fff;
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
   color: white;
   background: linear-gradient(gray, rgb(92, 92, 92));
 }
@@ -7196,7 +7196,9 @@ select {
 }
 
 .select-wrapper input.select-dropdown:focus {
-  border-bottom: 1px solid #26a69a;
+  border-bottom: 1px solid rgb(43, 43, 83);
+  -webkit-box-shadow: 0 1px 0 0 rgb(43, 43, 83);
+  box-shadow: 0 1px 0 0 rgb(43, 43, 83);
 }
 
 .select-wrapper .caret {

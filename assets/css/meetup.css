@@ -1,9 +1,7 @@
-
-
 div.searchArea  {
     height: 100%;
     width: 100%;
-    margin: 100px auto;
+    /* margin: 100px auto; */
 
 }
 
@@ -14,7 +12,7 @@ div.input-field.radiusInput {
 div.results-area {
     height: 100%;
     width: 100%;
-    margin: 100px auto;
+    margin-top: 25px;
 
 }
 
@@ -29,11 +27,33 @@ input#zipInput {
 
 .meetup-logo {
     width: 250px;
-    height: 250px;
-    margin-bottom: -160px;
+    /* height: 250px; */
+   margin-top: 10px;
 }
 
-a.meetupBtn {
+.meetupBtn {
     background-color: rgb(66, 66, 129);
+    color: white;
 }
 
+.meetupBtn:active{
+    background-color: white;
+    color:rgb(66, 66, 129); 
+}
+
+.meetupBtn:focus{
+    background-color: white;
+    color:rgb(66, 66, 129); 
+}
+
+.meetupBtn{
+    position: fixed;
+    top: 100px;
+    left: 0;
+    padding: 0px;
+    height: 145px;
+    float:left;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    z-index: 1000;
+  }
