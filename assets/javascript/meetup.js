@@ -1,5 +1,5 @@
 $("#clearBtn").on("click", function() {
-    $("#search-results").empty()
+    $("#search-results").empty() 
 });
 
 function formClear () {
