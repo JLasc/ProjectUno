@@ -30,7 +30,10 @@
       
       <ul id="nav-mobile" class="sidenav">
         <li>
-          <a href="#">Navbar Link</a>
+          <a class="modal-trigger" id="navLoginButton" href="#signIn">Login</a>
+        </li>
+        <li>
+          <a class="modal-trigger" id="navSignUpButton" href="#signIn">Sign Up</a>
         </li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger">
@@ -114,7 +117,7 @@
           <h5 class="header col s12 light question">Weather is the question.</h5>
         </div>
         <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">How it works</a>
+          <!-- <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">How it works</a> -->
         </div>
         <br>
         <br>
@@ -126,7 +129,7 @@
 
 
   <div class="container">
-    <div class="section">
+    <div class="section" id="infoSection">
 
       <!--   Icon Section   -->
       <div class="row">
@@ -136,6 +139,7 @@
               <i class="material-icons">flash_on</i>
             </h2>
             <h5 class="center">Organize yourself</h5>
+            <p class="center">Sign up and add To-Do tasks to organize your day based on the Weather.</p>
           </div>
         </div>
 
@@ -145,6 +149,7 @@
               <i class="material-icons">group</i>
             </h2>
             <h5 class="center">Stay Informed</h5>
+            <p class="center">With a 5 day forecast and MeetUp you can make the best choices of when to go and hang out with friends or when to go for that run.</p>
           </div>
         </div>
 
@@ -154,6 +159,7 @@
               <i class="material-icons">settings</i>
             </h2>
             <h5 class="center">Easy to work with</h5>
+            <p class="center">You can Sign-up and a short form to add To-Dos, you can quickly get your day organized in minutes!</p>
           </div>
         </div>
       </div>
@@ -212,13 +218,13 @@
         <div class="col l3 s12 footer-options">
           <ul>
             <li>
-              <a class="waves-effect waves-light btn modal-trigger" id="navSignUpButton" href="#signIn">Sign Up</a>
+              <a class="white-text" id="navSignUpButton" href="#signIn">Sign Up</a>
             </li>
             <li>
-                <a class="waves-effect waves-light btn modal-trigger" id="navLoginButton" href="#signIn">Login</a>
+                <a class="white-text" id="navLoginButton" href="#signIn">Login</a>
             </li>
             <li>
-              <a class="waves-effect waves-light btn" id="home-btn" href="#navbar">Scroll Top</a>
+              <a class="white-text" id="home-btn" href="href="#navbar">Scroll Top</a>
             </li>
           </ul>
         </div>
