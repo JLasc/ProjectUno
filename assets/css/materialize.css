@@ -5863,7 +5863,6 @@ body.keyboard-focused .dropdown-content li:focus {
   padding-left: 1rem;
   line-height: 45px;
   background-color: #fff;
-  /* border-bottom: 1px solid black; */
   color: white;
   background: linear-gradient(gray, rgb(92, 92, 92));
 }
