@@ -62,7 +62,7 @@ $(document).ready(function() {
         console.log("Weather State: " + weatherState);
         doCase(weatherState, weatherDay);
       } else {
-        weatherState = "error"; // either no error code or code doesn't match ranges specified previously...
+        weatherState = "error"; // either no weather code or code doesn't match ranges specified previously...
         doCase(weatherState, weatherDay);
       }
     }
@@ -89,7 +89,7 @@ $(document).ready(function() {
         );
         break;
 
-      case "cloudy":
+      case "clouds":
         $("#forecast").append(
           `<div class='weatherToday' id='day${i}'><img id='day${i}' class = 'icons' src='assets/images/30.png'><p>${currentDay}</div>`
         );
