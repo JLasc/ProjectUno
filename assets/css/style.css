@@ -116,19 +116,55 @@ p {
   color: white;
 }
 
-#navLoginButton:active {
+.navLoginButton:active {
   background-color: rgb(66, 66, 129);
 }
 
-#navLoginButton:focus {
+.navLoginButton:focus {
   background-color: white;
 }
 
-#navSignUpButton:active {
+.navSignUpButton:active {
   background-color: rgb(66, 66, 129);
 }
-#navSignUpButton:focus {
+.navSignUpButton:focus {
   background-color: white;
+}
+
+.navAccountButton:active {
+  background-color: rgb(66, 66, 129);
+}
+.navAccountButton:focus {
+  background-color: white;
+}
+
+.navAccountButton:hover {
+  background-color: white;
+  background-color: rgb(66, 66, 129);
+}
+
+#cancel:active {
+  background-color: rgb(66, 66, 129);
+}
+#cancel:focus {
+  background-color: white;
+}
+
+#cancel:hover {
+  background-color: white;
+  background-color: rgb(66, 66, 129);
+}
+
+#save:active {
+  background-color: rgb(66, 66, 129);
+}
+#save:focus {
+  background-color: white;
+}
+
+#save:hover {
+  background-color: white;
+  background-color: rgb(66, 66, 129);
 }
 
 #download-button:active {
