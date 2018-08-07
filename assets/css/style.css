@@ -226,6 +226,14 @@ div.footer-options li {
   cursor: pointer;
 }
 
+#accountFooter{
+  margin-bottom: 20px;
+}
+
+#save{
+  margin-right: 20px;
+}
+
 @media only screen and (max-width: 992px) {
   .parallax-container .section {
     position: absolute;
