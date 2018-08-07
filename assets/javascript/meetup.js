@@ -54,18 +54,29 @@ $.ajax({
                 <b>Next Event: </b>${moment(response[i].next_event.time).format('MMMM Do YYYY, h:mm:ss a')}<br>
                 <div class="card-action">
                 <a href="${response[i].link}" target="_blank">Join this event</a>
+                <a href="#" id="meetup-task">Create Task</a>
                 </div>
             </div>
             </div>
             </div>
         `
-
         $("#search-results").append(contentCard)
+    
+
+    
     };
-
-
 });
+
+$(document).on("click","#meetup-task", function(){
+    $("#title").attr("value", "Meetup Event")
+    $("#title-to-do").addClass("active")
+});
+
 
 formClear()
 
+
+
+
 });
+
