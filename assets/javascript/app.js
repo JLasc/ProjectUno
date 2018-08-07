@@ -158,16 +158,15 @@ $(document).ready(function () {
     $('#change_last_name').val(lastName);
     $('#change_first_name').val(firstName);
     $('#changeEmail').val(email);
-    $('#accountForm').on('submit', function(e) {
-      e.preventDefault;
+    $('#accountForm').on('submit', function(e) { 
+      e.preventDefault();
       var user = firebase.auth().currentUser;
       var newFirstName = $('#change_first_name').val();
       var newLastName = $('#change_last_name').val();
-      var newEmail = $('#changeEmail').val();
       var fullName = newFirstName + " " + newLastName;
       user.updateProfile({
         displayName: fullName
-      }).then(function(user){
+      }).then(function(){
         var user = firebase.auth().currentUser;
         $('.navAccountButton').html(user.displayName);
         $('.modal').modal('close');
