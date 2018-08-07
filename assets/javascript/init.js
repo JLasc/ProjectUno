@@ -9,11 +9,11 @@
     $('.modal').modal();
     var tabInstanse = $('.tabs').tabs();
 
-    $('#navSignUpButton').on('click', function(){
+    $('.navSignUpButton').on('click', function(){
       tabInstanse.tabs('select','signUp');
     })
 
-    $('#navLoginButton').on('click', function(){
+    $('.navLoginButton').on('click', function(){
       tabInstanse.tabs('select','login');
     })
 
