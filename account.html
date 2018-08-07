@@ -58,7 +58,7 @@
             <div class="row short">
               <div class="input-field col s12 short">
                 <input id="title" type="text" class="validate" required>
-                <label for="title">To-Do</label>
+                <label id="title-to-do" for="title">To-Do</label>
               </div>
             </div>
             <div class="row short">
@@ -169,9 +169,9 @@
             </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-red btn-flat">Cancel</a>
-        <button class="btn waves-effect waves-light" type="submit">Save</button>
+      <div class="modal-footer" id="accountFooter">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-red btn" id="cancel">Cancel</a>
+        <button class="btn waves-effect waves-light" id="save" type="submit" name="action">Save</button>
       </div>
       </form>
     </div>
