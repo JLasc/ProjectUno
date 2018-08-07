@@ -139,7 +139,7 @@ $(document).ready(function () {
         var id = element.key;
         $(".collapsible").prepend(
           "<li><div class='collapsible-header'><i class='material-icons'>filter_drama</i>" +
-          element.val().title + "<span class='badge' data=" + id + ">X</span></div><div class='collapsible-body'><p>" +
+          element.val().title + "<span class='badge' data=" + id + ">X</span></div><div class='collapsible-body'><p>" + element.val().date + "</p><p>" + element.val().time + "</p><p>" +
           element.val().details + "</div></li>");
       });
     });
