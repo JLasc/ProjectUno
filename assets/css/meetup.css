@@ -40,6 +40,11 @@ input#zipInput {
     color:rgb(66, 66, 129); 
 }
 
+.meetupBtn:hover{
+    background-color: white;
+    color:rgb(66, 66, 129); 
+}
+
 .meetupBtn:focus{
     background-color: white;
     color:rgb(66, 66, 129); 
