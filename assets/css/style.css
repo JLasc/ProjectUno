@@ -215,6 +215,17 @@ div.footer-options li {
   margin-bottom: 5px;
 }
 
+.inputLabel{
+  margin: 0;
+  font-size: .8rem;
+  height: 20px;
+  color: rgb(43, 43, 83);
+}
+
+.navLogoutButton{
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 992px) {
   .parallax-container .section {
     position: absolute;

@@ -6965,7 +6965,7 @@ $jscomp.polyfill = function (e, r, p, m) {
         $(this).siblings('label').addClass('active');
       }
       M.validate_field($(this));
-    });
+          });
 
     // Add active if input element has been pre-populated on document ready
     $(document).ready(function () {
