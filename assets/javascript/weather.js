@@ -109,7 +109,13 @@ $(document).ready(function() {
 
       case "error":
         $("#forecast").append(
-          `<div class='weatherToday' id='day${i}'><img id='day${i}' class = 'icons' src='assets/images/44.png'><p>Error!</div>`
+          `<div class='weatherToday' id='day${i}'><img id='day${i}' class = 'icons' src='assets/images/44.png'><p>API Error!</div>`
+        );
+        break;
+
+      default:
+        $("#forecast").append(
+          `<div class='weatherToday' id='day${i}'><img id='day${i}' class = 'icons' src='assets/images/44.png'><p>Case Error!</div>`
         );
     }
   };
