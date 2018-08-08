@@ -9,7 +9,7 @@ This application allows any user to create a persistent to-do list with addition
 
 # Features
 - To-Do List with integrated weather forecast (via OpenWeather.org's API) and integrated local events (via MeetUp API)
-- User sign-up and authentication and data storage via Firebase (Google)
+- User sign-up and authentication and task data storage via Firebase (including delete functionality)
 - Styled with customized Materialize framework template
     
     
